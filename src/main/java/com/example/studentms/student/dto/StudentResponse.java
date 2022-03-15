@@ -8,13 +8,12 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StudentResponse {
 
     private Long studentId;
     private String name;
     private String mobileNo;
-    private int courseId;
+    private Integer courseId;
     private List<Student> students;
 }

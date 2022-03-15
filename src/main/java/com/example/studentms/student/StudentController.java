@@ -21,7 +21,7 @@ public class StudentController {
        return ResponseEntity.ok(studentService.allStudents());
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> saveStudent(@RequestBody Student student){
         return ResponseEntity.ok(studentService.addStudent(student));
@@ -30,6 +30,11 @@ public class StudentController {
     @GetMapping("/ID/{id}")
     public ResponseEntity<?> getById(@PathVariable Long id){
         return ResponseEntity.ok(studentService.getStudentById(id));
+    }
+
+    @GetMapping("/ID/v2/{id}")
+    public ResponseEntity<?> secondGetById(@PathVariable Long id){
+        return ResponseEntity.ok(studentService.secondGetStudentById(id));
     }
 
     @GetMapping("/name/{name}")
