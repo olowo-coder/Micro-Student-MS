@@ -6,9 +6,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
 @SpringBootApplication
-@PropertySources({
-        @PropertySource({"file:///Users/mac/Desktop/Setup/student.properties"})
-})
+//@PropertySources({
+//        @PropertySource({"file:///Users/mac/Desktop/Setup/student.properties"})
+//})
 public class StudentMsApplication {
 
     public static void main(String[] args) {

@@ -1,19 +1,30 @@
 package com.example.studentms.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/student")
+@RefreshScope
 public class StudentController {
 
     private final StudentService studentService;
 
+    @Value("${message:default message}")
+    private String message;
+
     @Autowired
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
+    }
+
+    @GetMapping("/message")
+    public String message(){
+        return message;
     }
 
     @GetMapping("/all")
